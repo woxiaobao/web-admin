@@ -2,15 +2,14 @@
 grails web管理后台插件
 
 # 项目说明
-本项目作为企用管理系统的Grails插件
-当前最新版本: `1.0.0`
+本项目作为管理系统的Grails插件
+当前最新版本: `0.1`
 ## 主要功能
 - 完整的后台管理系统UI(采用`AdminLTE`，支持Bootstrap样式风格)
 - 完整用户权限管理(用户、角色、权限)(目前采用`Shiro`) [配置方法](#初始化权限数据)
 - 支持自定义左侧菜单，方便扩展 [详细用法](#自定义左侧菜单)
 - 支持自定义系统Title
 - 登录后首页模块化(测试中)
-- 文件上传默认选择OpenApiUpload [查看OpenApiUpload配置及用法](http://git.qiyestore.com/maven/openapi-client#openupload使用说明)
 
 ## 待完成功能
 - 可以自定义网站title/description/keyword等内容
@@ -21,9 +20,6 @@ grails web管理后台插件
 ## 安装插件
 在`conf/BuildConfig.groovy`中，增加如下配置：
 ```java
-<!-- repositories {
-	mavenRepo "http://repo.qiyestore.com/repository/m2/"
-} -->
 
 plugins {
 	compile "com.lv.grails.plugin:admin-web:1.0.0"
@@ -40,7 +36,7 @@ runtime ":jquery:1.11.1"
 ## 删除部分默认配置，解决冲突
 ### 删除application.js中加载jquery部分
 
-> create-app创建完项目后，默认application.js中加载了jquery，与admin-web模板中jquery重复加载，造成冲突。因此删除掉application.js中加载的jquery
+> create-app创建完项目后，默认application.js中加载了jquery，与web-admin模板中jquery重复加载，造成冲突。因此删除掉application.js中加载的jquery
 
 ```js
 // 删除掉assets/javascript/application.js中这一行
