@@ -28,6 +28,7 @@ plugins {
 
 同时还依赖如下插件`可以选择使用插件最新版本`:
 ```java
+compile "org.grails.plugins:shiro:1.2.1"
 compile ":asset-pipeline:1.9.9"
 runtime ":hibernate4:4.3.6.1"
 runtime ":jquery:1.11.1"
