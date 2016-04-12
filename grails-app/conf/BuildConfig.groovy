@@ -25,7 +25,7 @@ grails.project.dependency.resolution = {
         mavenLocal()
         mavenCentral()
 
-        mavenRepo "http://repo.qiyestore.com/repository/m2/"
+        //mavenRepo "http://repo.qiyestore.com/repository/m2/"
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
