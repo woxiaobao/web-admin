@@ -45,9 +45,7 @@ grails.project.dependency.resolution = {
             export = false
         }
 
-        compile("com.qiyestore.grails.plugin:openapi-client:0.11",
-                ":shiro:1.2.1") {
-        }
+       
 
         runtime(":jquery:1.11.1",
                 ":hibernate4:4.3.6.1") {
@@ -57,7 +55,3 @@ grails.project.dependency.resolution = {
     }
 }
 
-grails.project.repos.qiyestoreRepo.url = "http://repo.qiyestore.com/repository/m2/"
-grails.project.repos.qiyestoreRepo.type = "maven"
-grails.project.repos.qiyestoreRepo.username = "qiyestore"
-grails.project.repos.qiyestoreRepo.password = "qiyestore2015"
