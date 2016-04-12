@@ -21,12 +21,12 @@ grails web管理后台插件
 ## 安装插件
 在`conf/BuildConfig.groovy`中，增加如下配置：
 ```java
-repositories {
+<!-- repositories {
 	mavenRepo "http://repo.qiyestore.com/repository/m2/"
-}
+} -->
 
 plugins {
-	compile "com.qiyestore.grails.plugin:admin-web:1.0.0"
+	compile "com.lv.grails.plugin:admin-web:1.0.0"
 }
 ```
 
