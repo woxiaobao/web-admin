@@ -25,25 +25,6 @@ runtime ":hibernate4:4.3.6.1"
 runtime ":jquery:1.11.1"
 ```
 
-## 删除部分默认配置，解决冲突
-### 删除application.js中加载jquery部分
-
-> create-app创建完项目后，默认application.js中加载了jquery，与web-admin模板中jquery重复加载，造成冲突。因此删除掉application.js中加载的jquery
-
-```js
-// 删除掉assets/javascript/application.js中这一行
-//= require jquery
-```
-
-### 删除默认`/`urlmapping配置
-
-> 解决默认地址`/`加载问题登陆页面问题
-
-```java
-// 注释掉UrlMappings.groovy中下面这一行
-"/"(view:"/index")
-```
-
 ## 初始化权限数据
 你可以在`controller`,`service`中调用如下代码，帮助你初始化数据库
 ```java
