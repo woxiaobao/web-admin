@@ -1,4 +1,9 @@
-plugin.xml
-test
-target
-grails-admin-web-*.zip
+*.class
+bin/
+.settings/
+temp/
+logs/
+upload/
+target/
+target-eclipse/
+wrapper/

@@ -21,6 +21,7 @@ class UserSecurityService {
         if(adminUser) {
         	log.debug 'Username "admin" exists!'
         } else {
+            print "initDB"
         	adminUser = new TUser(username:'admin', name:'系统管理员', password:this.encodePassword('111111'), email:'admin@qiyestore.com', nickname:'Admin', status:TUser.STATUS_USE, comment:'GENERATED at BOOTSTRAP').save(flush:true)
         	def baseModule = new TModule(name:'基础权限',permissions:'user:userEdit,userSave||dashboard:*').save(flush:true)
         	def baseRole = new TRole(authority:'ROLE_USER').save(flush:true)

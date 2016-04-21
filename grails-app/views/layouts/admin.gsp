@@ -89,7 +89,7 @@
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        
+
         <!-- Bootstrap -->
         <script src="http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- AdminLTE App -->
@@ -102,9 +102,9 @@
         <asset:javascript src="openapi/openapi-client.js" />
         <asset:javascript src="openapi-config.js" />
         <script type="text/javascript">
-            $(document).ready(function() {
-                OpenApiClient.getAccessToken('${com.qiyestore.grails.plugin.admin_web.UserSecurity.currentUser?.id}');
-            });
+            // $(document).ready(function() {
+            //     OpenApiClient.getAccessToken('${com.qiyestore.grails.plugin.admin_web.UserSecurity.currentUser?.id}');
+            // });
         </script>
         </plugin:isAvailable>
 

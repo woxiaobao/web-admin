@@ -1,3 +1,18 @@
+import java.io.IOException
+
+import org.springframework.core.io.ClassPathResource
+// import org.springframework.core.io.support.PropertiesLoaderUtils
+def appPath
+// def properties
+try {
+    def configFile = new ClassPathResource("app-config.properties").file
+    // println configFile.path
+    appPath = configFile.parentFile.parentFile.parentFile.path
+    // println appPath
+} catch (IOException e) {
+    e.printStackTrace();
+}
+
 dataSource {
     pooled = true
     jmxExport = true
@@ -18,8 +33,8 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
+            url = "jdbc:h2:data/prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
         }
     }
     test {
@@ -31,7 +46,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            url = "jdbc:h2:$appPath/data/prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true

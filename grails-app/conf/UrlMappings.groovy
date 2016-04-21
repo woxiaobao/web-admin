@@ -1,7 +1,6 @@
-class AdminWebUrlMappings {
+class UrlMappings {
 
 	static mappings = {
-        
         "/auth/$action?/$id?(.$format)?" (controller: 'auth')
         "/user/$action?/$id?(.$format)?" (controller: 'user')
         "/dashboard/$action?/$id?(.$format)?" (controller: 'dashboard')
