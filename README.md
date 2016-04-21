@@ -1,8 +1,8 @@
 ﻿# web-admin
-grails web管理后台插件
+grails web管理后台
 
 # 项目说明
-本项目作为管理系统的Grails插件
+本项目作为管理系统
 当前最新版本: `0.1`
 ## 主要功能
 - 完整的后台管理系统UI(采用`AdminLTE`，支持Bootstrap样式风格)
@@ -17,16 +17,7 @@ grails web管理后台插件
 - 首页布局模块化，支持自定义模块
 
 # 使用方法
-## 安装插件
-在`conf/BuildConfig.groovy`中，增加如下配置：
-```java
-
-plugins {
-	compile "com.lv.grails.plugin:admin-web:1.0.0"
-}
-```
-
-同时还依赖如下插件`可以选择使用插件最新版本`:
+依赖如下插件`可以选择使用插件最新版本`:
 ```java
 compile "org.grails.plugins:shiro:1.2.1"
 compile ":asset-pipeline:1.9.9"
@@ -113,24 +104,4 @@ admin模板引用位置如下：
         <asset:javascript src="application.js" />
     </body>
 </html>
-```
-application.js文件内容demo:
-```js
-//= require_self
-
-console.log('hahahahaha');
-```
-
-# 编译及发布方法
-编译项目安装`release`插件
-```sh
-grails compile
-```
-修改版本号`AdminWebGrailsPlugin`
-```java
-def version = "x.xx" // x.xx 为版本号
-```
-发布插件到Maven Repository
-```sh
-grails publish-plugin --repository=qiyestoreRepo
 ```
