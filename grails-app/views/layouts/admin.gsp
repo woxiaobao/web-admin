@@ -10,6 +10,11 @@
         <link href="http://cdn.bootcss.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css" />
         <!-- Theme style -->
         <asset:stylesheet src="admin/AdminLTE/AdminLTE.css" />
+
+        <!--alertify-->
+        <asset:stylesheet src="alertify.css" />
+        <!--humane-->
+        <asset:stylesheet src="humane/jackedup.css"/>
  		%{-- <link href="${request.contextPath}/css/abox.css" rel="stylesheet" type="text/css" /> --}%
  		            
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -96,6 +101,10 @@
         <asset:javascript src="admin/admin.js" />
         <asset:javascript src="admin/AdminLTE/app.js" />
         <asset:javascript src="admin/AdminLTE/holder.min.js" />
+
+        <!-- 加载信息提示插件 -->
+        <asset:javascript src="alertify.js" />
+        <asset:javascript src="humane.js"/>
         
         <plugin:isAvailable name="openapi-client">
         <!-- 加载OpenApiClient -->
@@ -108,8 +117,10 @@
         </script>
         </plugin:isAvailable>
 
+
         <!-- 加载自定义application.js -->
         <asset:javascript src="application.js" />
+
 
     </body>
 </html>

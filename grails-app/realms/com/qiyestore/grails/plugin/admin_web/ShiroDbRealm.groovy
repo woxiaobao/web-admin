@@ -17,6 +17,7 @@ class ShiroDbRealm {
 
     def authenticate(authToken) {
         log.info "Attempting to authenticate ${authToken.username} in DB realm..."
+        //print "Attempting to authenticate ${authToken.username} in DB realm..."
         def username = authToken.username
 
         // Null username is invalid

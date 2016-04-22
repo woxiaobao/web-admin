@@ -13,7 +13,7 @@ class UserSecurity {
 	private def static final CURRENT_USER_ROLE_KEY = "current_user_role";
 
 	def static initUser(def user){
-		
+		//print "initUser"
 		def roles = TUserTRole.createCriteria().list {
 			createAlias "user", "user" 
 			createAlias "role", "role"
@@ -48,6 +48,7 @@ class UserSecurity {
 			if(permissons){
 				permissons.each {per->
 					if(per){
+						print per
 						def pary = per.split("\\|\\|");
 						pary.each {p->
 							userPermi.add(p);

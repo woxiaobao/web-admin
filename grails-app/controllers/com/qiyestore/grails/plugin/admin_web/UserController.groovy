@@ -282,6 +282,55 @@ class UserController {
 		render(text:result,contentType: "text/plain", status:response.SC_OK)
 	}
 
+	//获取模块数
+	def moduleTreeJson = {
+		def role 
+		def roleModules;
+		def modules
+		//信息来源
+		def refererUrl = request.getHeader("Referer");
+		
+		modules = TModule.createCriteria().list {
+			order("sortTop","desc")
+		};
+
+		if(params.id){
+			role = TRole.get(params.id as Long);
+			if(role){
+				roleModules = TRoleTModule.createCriteria().list {
+					eq("role",role)
+					projections {
+						property("module.id")
+					}
+				}
+			}
+		}
+
+		def roleModuleStr="";
+		if(roleModules){
+			roleModuleStr = ",${roleModules.join(',')},";
+		} 
+
+		def treeJson = [];
+		treeJson << [id:0, pId:-1, name:"模块", open:true];
+		if(modules){
+			modules.each{
+				def pId = it.parentId?:0;
+				def checked = false;
+				if(roleModules){
+					checked = roleModuleStr.indexOf(",${it.id},")>-1?true:false;
+				}
+				treeJson <<[id:it.id, pId:pId,isParent:true,checked:checked,name:"${it.name}", open:true];
+			}
+		}
+
+		if(!role){
+			role = new TRole();
+		}
+		render treeJson as JSON
+	}
+
+
 
 	def roleList = {
 

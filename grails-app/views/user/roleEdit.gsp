@@ -82,6 +82,7 @@
 
                 var treeJson = $("#treeJson").val();
                 var zNodes = eval("("+treeJson+")");
+                
                 $.fn.zTree.init($("#treeDemo"), setting, zNodes);
             });
 
