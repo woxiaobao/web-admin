@@ -11,6 +11,8 @@ class TRole {
 	Date dateCreated
 	Date lastUpdated
 	Long createdById
+	
+	static hasMany = [ permissions: TPermission]
 
 	static mapping = { 
 		version false
